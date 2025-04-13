@@ -3,28 +3,28 @@ import Link from "next/link"
 import { Play } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
-// Sample featured works data
+// 更新后的精选作品数据
 const featuredWorks = [
   {
     id: 1,
-    title: "Postpartum Care at Home",
+    title: "Artiverse",
     type: "image",
-    thumbnail: "/public/images/fifth.jpg",
-    category: "产品",
+    thumbnail: "/images/artiverse.png",
+    category: "设计",
   },
   {
     id: 2,
-    title: "KittenFishing",
-    type: "video",
-    thumbnail: "/public/images/kittenfishing.jpg",
-    category: "视频",
+    title: "Fourth Trimester Health",
+    type: "image",
+    thumbnail: "/images/fifth.png",
+    category: "健康科技",
   },
   {
     id: 3,
-    title: "Artiverse UI设计",
-    type: "video",
-    thumbnail: "/public/videos/Artiverse UI.mp4",
-    category: "设计",
+    title: "Kitten Fishing",
+    type: "image",
+    thumbnail: "/images/kittenfishing.png",
+    category: "游戏设计",
   },
 ]
 

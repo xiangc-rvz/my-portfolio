@@ -3,28 +3,28 @@ import Link from "next/link"
 import { Play } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
-// Sample portfolio works data
+// 更新后的作品集数据
 const portfolioWorks = [
   {
     id: 1,
-    title: "城市风光摄影集",
+    title: "Artiverse",
     type: "image",
-    thumbnail: "/placeholder.svg?height=600&width=800",
-    category: "摄影",
+    thumbnail: "/images/artiverse.png",
+    category: "设计",
   },
   {
     id: 2,
-    title: "品牌宣传视频",
-    type: "video",
-    thumbnail: "/placeholder.svg?height=600&width=800",
-    category: "视频",
+    title: "Fourth Trimester Health",
+    type: "image",
+    thumbnail: "/images/fifth.png",
+    category: "健康科技",
   },
   {
     id: 3,
-    title: "产品设计展示",
+    title: "Kitten Fishing",
     type: "image",
-    thumbnail: "/placeholder.svg?height=600&width=800",
-    category: "设计",
+    thumbnail: "/images/kittenfishing.png",
+    category: "游戏设计",
   },
   {
     id: 4,

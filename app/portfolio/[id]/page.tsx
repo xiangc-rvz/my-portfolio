@@ -4,48 +4,44 @@ import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import VideoPlayer from "@/components/video-player"
 
-// Sample portfolio works data (same as in portfolio-grid.tsx)
+// 更新后的作品集数据
 const portfolioWorks = [
   {
     id: 1,
-    title: "产后产品",
+    title: "Artiverse",
     type: "image",
-    thumbnail: "/public/images/fifth.jpg",
-    category: "摄影",
-    description: "这是一组展现现代城市建筑与街道风光的摄影作品，捕捉了城市的动感与活力。",
+    thumbnail: "/images/artiverse.png",
+    category: "设计",
+    description: "Artiverse是一个创意艺术平台，展示了现代设计与艺术的融合。",
     images: [
-      "/public/images/fifth.png",
+      "/images/artiverse.png",
       "/placeholder.svg?height=800&width=1200",
       "/placeholder.svg?height=800&width=1200",
     ],
   },
   {
     id: 2,
-    title: "Kittenfishing",
+    title: "Fourth Trimester Health",
     type: "image",
-    thumbnail: "/public/images/kittenfishing.jpg",
-    category: "视频",
-    description: "为某品牌制作的宣传视频，展示了产品特性和品牌理念。",
-    images: [
-      "/public/images/kittenfishing.png",
-      "/placeholder.svg?height=800&width=1200",
-      "/placeholder.svg?height=800&width=1200",
-    ],
+    thumbnail: "/images/fifth.png",
+    category: "健康科技",
+    description:
+      "为产后期开发的可穿戴和环境传感器系统，这是与卡内基梅隆大学合作的计算机系统快速原型设计项目（2025年春季）。",
+    images: ["/images/fifth.png", "/placeholder.svg?height=800&width=1200", "/placeholder.svg?height=800&width=1200"],
   },
   {
     id: 3,
-    title: "Artiverse UI设计",
-    type: "video",
-    thumbnail: "/public/videos/Artiverse UI.mp4",
-    category: "设计",
-    description: "这是一组展现现代城市建筑与街道风光的摄影作品，捕捉了城市的动感与活力。",
+    title: "Kitten Fishing",
+    type: "image",
+    thumbnail: "/images/kittenfishing.png",
+    category: "游戏设计",
+    description: "一款可爱的像素风格猫咪钓鱼游戏，玩家可以控制不同的猫咪角色进行钓鱼冒险。",
     images: [
-      "/public/videos/Artiverse UI.mp4",
+      "/images/kittenfishing.png",
       "/placeholder.svg?height=800&width=1200",
       "/placeholder.svg?height=800&width=1200",
     ],
   },
-  // ... other works
 ]
 
 export default function ProjectPage({ params }: { params: { id: string } }) {
@@ -53,7 +49,15 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   const project = portfolioWorks.find((work) => work.id === projectId)
 
   if (!project) {
-    return <div className="container py-12 text-center">项目未找到</div>
+    return (
+      <div className="container py-12 text-center">
+        <h2 className="text-2xl font-bold mb-4">项目未找到</h2>
+        <p className="text-muted-foreground mb-6">您查找的项目不存在或已被移除。</p>
+        <Button asChild>
+          <Link href="/portfolio">返回作品集</Link>
+        </Button>
+      </div>
+    )
   }
 
   return (

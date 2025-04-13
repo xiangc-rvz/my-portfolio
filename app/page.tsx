@@ -14,15 +14,15 @@ export default function Home() {
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">精选作品</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                探索我最新的创意项目
+                探索我最新和最具代表性的创意项目
               </p>
             </div>
           </div>
           <FeaturedWorks />
           <div className="flex justify-center mt-12">
             <Button asChild>
-              <Link href="/portfolio" className="flex items-center gap-2">
-                查看全部作品
+              <Link href="/works" className="flex items-center gap-2">
+                查看更多作品
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
