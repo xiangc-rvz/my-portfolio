@@ -14,7 +14,7 @@ const portfolioWorks = [
     category: "摄影",
     description: "这是一组展现现代城市建筑与街道风光的摄影作品，捕捉了城市的动感与活力。",
     images: [
-      "/public/images/fifth.jpg",
+      "/public/images/fifth.png",
       "/placeholder.svg?height=800&width=1200",
       "/placeholder.svg?height=800&width=1200",
     ],
@@ -27,7 +27,7 @@ const portfolioWorks = [
     category: "视频",
     description: "为某品牌制作的宣传视频，展示了产品特性和品牌理念。",
     images: [
-      "/public/images/kittenfishing.jpg",
+      "/public/images/kittenfishing.png",
       "/placeholder.svg?height=800&width=1200",
       "/placeholder.svg?height=800&width=1200",
     ],
