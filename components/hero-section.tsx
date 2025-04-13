@@ -9,7 +9,7 @@ export default function HeroSection() {
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">创意作品集</h1>
             <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
-              欢迎来到我的创意世界，这里展示了我的摄影、视频和设计作品
+              欢迎来到我的创意世界，这里展示了我的设计作品
             </p>
           </div>
           <div className="space-x-4">

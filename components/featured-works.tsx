@@ -7,21 +7,21 @@ import { Card, CardContent } from "@/components/ui/card"
 const featuredWorks = [
   {
     id: 1,
-    title: "城市风光摄影集",
+    title: "本田研究所合作项目：Postpartum Care at Home",
     type: "image",
     thumbnail: "/placeholder.svg?height=600&width=800",
-    category: "摄影",
+    category: "产品",
   },
   {
     id: 2,
-    title: "品牌宣传视频",
+    title: "KittenFishing",
     type: "video",
     thumbnail: "/placeholder.svg?height=600&width=800",
     category: "视频",
   },
   {
     id: 3,
-    title: "产品设计展示",
+    title: "Artiverse UI设计",
     type: "image",
     thumbnail: "/placeholder.svg?height=600&width=800",
     category: "设计",
