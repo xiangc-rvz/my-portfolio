@@ -8,25 +8,42 @@ import VideoPlayer from "@/components/video-player"
 const portfolioWorks = [
   {
     id: 1,
-    title: "城市风光摄影集",
+    title: "产后产品",
     type: "image",
-    thumbnail: "/placeholder.svg?height=600&width=800",
+    thumbnail: "/public/images/fifth.jpg",
     category: "摄影",
     description: "这是一组展现现代城市建筑与街道风光的摄影作品，捕捉了城市的动感与活力。",
     images: [
-      "/placeholder.svg?height=800&width=1200",
+      "/public/images/fifth.jpg",
       "/placeholder.svg?height=800&width=1200",
       "/placeholder.svg?height=800&width=1200",
     ],
   },
   {
     id: 2,
-    title: "品牌宣传视频",
-    type: "video",
-    thumbnail: "/placeholder.svg?height=600&width=800",
+    title: "Kittenfishing",
+    type: "image",
+    thumbnail: "/public/images/kittenfishing.jpg",
     category: "视频",
     description: "为某品牌制作的宣传视频，展示了产品特性和品牌理念。",
-    videoUrl: "https://example.com/video.mp4", // 这里需要替换为实际视频URL
+    images: [
+      "/public/images/kittenfishing.jpg",
+      "/placeholder.svg?height=800&width=1200",
+      "/placeholder.svg?height=800&width=1200",
+    ],
+  },
+  {
+    id: 3,
+    title: "Artiverse UI设计",
+    type: "video",
+    thumbnail: "/public/videos/Artiverse UI.mp4",
+    category: "设计",
+    description: "这是一组展现现代城市建筑与街道风光的摄影作品，捕捉了城市的动感与活力。",
+    images: [
+      "/public/videos/Artiverse UI.mp4",
+      "/placeholder.svg?height=800&width=1200",
+      "/placeholder.svg?height=800&width=1200",
+    ],
   },
   // ... other works
 ]
