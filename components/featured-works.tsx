@@ -23,7 +23,7 @@ const featuredWorks = [
     id: 3,
     title: "Artiverse UI设计",
     type: "video",
-    thumbnail: "/public/video/Artiverse UI.mp4",
+    thumbnail: "/public/image/artiverse.jpg",
     category: "设计",
   },
 ]
