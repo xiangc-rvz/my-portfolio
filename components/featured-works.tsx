@@ -16,7 +16,7 @@ const featuredWorks = [
     id: 2,
     title: "KittenFishing",
     type: "video",
-    thumbnail: "/placeholder.svg?height=600&width=800",
+    thumbnail: "/public/video/Artiverse UI.mp4",
     category: "视频",
   },
   {
