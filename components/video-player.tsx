@@ -1,7 +1,7 @@
 "use client"
 
-import { useRef, useState } from "react"
-import { Play, Pause, Volume2, VolumeX } from "lucide-react"
+import { useRef, useState, useEffect } from "react"
+import { Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
 
@@ -10,6 +10,34 @@ export default function VideoPlayer({ videoUrl }: { videoUrl: string }) {
   const [isPlaying, setIsPlaying] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
   const [progress, setProgress] = useState(0)
+  const [duration, setDuration] = useState(0)
+  const [currentTime, setCurrentTime] = useState(0)
+  const [isLoading, setIsLoading] = useState(true)
+  const [hasError, setHasError] = useState(false)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const handleLoadedMetadata = () => {
+      setDuration(video.duration)
+      setIsLoading(false)
+    }
+
+    const handleError = () => {
+      console.error("Video failed to load:", videoUrl)
+      setHasError(true)
+      setIsLoading(false)
+    }
+
+    video.addEventListener("loadedmetadata", handleLoadedMetadata)
+    video.addEventListener("error", handleError)
+
+    return () => {
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata)
+      video.removeEventListener("error", handleError)
+    }
+  }, [videoUrl])
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -31,7 +59,9 @@ export default function VideoPlayer({ videoUrl }: { videoUrl: string }) {
 
   const handleTimeUpdate = () => {
     if (videoRef.current) {
-      const progress = (videoRef.current.currentTime / videoRef.current.duration) * 100
+      const currentTime = videoRef.current.currentTime
+      setCurrentTime(currentTime)
+      const progress = (currentTime / videoRef.current.duration) * 100
       setProgress(progress)
     }
   }
@@ -44,6 +74,43 @@ export default function VideoPlayer({ videoUrl }: { videoUrl: string }) {
     }
   }
 
+  const formatTime = (timeInSeconds: number) => {
+    const minutes = Math.floor(timeInSeconds / 60)
+    const seconds = Math.floor(timeInSeconds % 60)
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`
+  }
+
+  const toggleFullscreen = () => {
+    if (videoRef.current) {
+      if (document.fullscreenElement) {
+        document.exitFullscreen()
+      } else {
+        videoRef.current.requestFullscreen()
+      }
+    }
+  }
+
+  if (hasError) {
+    return (
+      <div className="relative rounded-lg overflow-hidden bg-black/10 flex items-center justify-center aspect-video">
+        <div className="text-center p-4">
+          <p className="text-red-500 font-medium mb-2">视频加载失败</p>
+          <p className="text-sm text-muted-foreground">请检查视频URL是否正确，或者视频文件是否可访问</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (isLoading) {
+    return (
+      <div className="relative rounded-lg overflow-hidden bg-black/10 flex items-center justify-center aspect-video">
+        <div className="text-center">
+          <p className="text-muted-foreground">视频加载中...</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="relative rounded-lg overflow-hidden bg-black">
       <video
@@ -52,7 +119,9 @@ export default function VideoPlayer({ videoUrl }: { videoUrl: string }) {
         className="w-full aspect-video"
         onTimeUpdate={handleTimeUpdate}
         onEnded={() => setIsPlaying(false)}
-        poster="/placeholder.svg?height=600&width=800"
+        onClick={togglePlay}
+        controls={false}
+        playsInline
       />
 
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
@@ -67,7 +136,15 @@ export default function VideoPlayer({ videoUrl }: { videoUrl: string }) {
             <Button variant="ghost" size="icon" onClick={toggleMute} className="text-white hover:bg-white/20">
               {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
             </Button>
+
+            <span className="text-white text-sm">
+              {formatTime(currentTime)} / {formatTime(duration)}
+            </span>
           </div>
+
+          <Button variant="ghost" size="icon" onClick={toggleFullscreen} className="text-white hover:bg-white/20">
+            <Maximize className="h-5 w-5" />
+          </Button>
         </div>
       </div>
     </div>

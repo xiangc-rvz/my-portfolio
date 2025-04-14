@@ -8,8 +8,8 @@ const featuredWorks = [
   {
     id: 1,
     title: "Artiverse",
-    type: "image",
-    thumbnail: "/images/artiverse.png",
+    type: "video", // 改为视频类型
+    thumbnail: "/images/artiverse.png", // 保留缩略图
     category: "设计",
   },
   {

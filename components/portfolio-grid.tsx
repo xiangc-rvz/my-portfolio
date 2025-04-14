@@ -3,12 +3,12 @@ import Link from "next/link"
 import { Play } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
-// 更新后的作品集数据
+// 更新后的作品集数据 - 只保留三个项目
 const portfolioWorks = [
   {
     id: 1,
     title: "Artiverse",
-    type: "image",
+    type: "video",
     thumbnail: "/images/artiverse.png",
     category: "设计",
   },
@@ -22,51 +22,9 @@ const portfolioWorks = [
   {
     id: 3,
     title: "Kitten Fishing",
-    type: "image",
-    thumbnail: "/images/kittenfishing.png",
+    type: "video",
+    thumbnail: "/images/fishing-cat-1.png",
     category: "游戏设计",
-  },
-  {
-    id: 4,
-    title: "自然风景系列",
-    type: "image",
-    thumbnail: "/placeholder.svg?height=600&width=800",
-    category: "摄影",
-  },
-  {
-    id: 5,
-    title: "创意短片",
-    type: "video",
-    thumbnail: "/placeholder.svg?height=600&width=800",
-    category: "视频",
-  },
-  {
-    id: 6,
-    title: "建筑摄影",
-    type: "image",
-    thumbnail: "/placeholder.svg?height=600&width=800",
-    category: "摄影",
-  },
-  {
-    id: 7,
-    title: "产品演示视频",
-    type: "video",
-    thumbnail: "/placeholder.svg?height=600&width=800",
-    category: "视频",
-  },
-  {
-    id: 8,
-    title: "人像摄影集",
-    type: "image",
-    thumbnail: "/placeholder.svg?height=600&width=800",
-    category: "摄影",
-  },
-  {
-    id: 9,
-    title: "UI设计作品",
-    type: "image",
-    thumbnail: "/placeholder.svg?height=600&width=800",
-    category: "设计",
   },
 ]
 

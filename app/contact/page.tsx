@@ -51,11 +51,11 @@ export default function ContactPage() {
           <div className="space-y-4">
             <div>
               <h3 className="font-semibold text-lg mb-1">邮箱</h3>
-              <p className="text-muted-foreground">contact@example.com</p>
+              <p className="text-muted-foreground">xiangc3@andrew.cmu.edu</p>
             </div>
             <div>
               <h3 className="font-semibold text-lg mb-1">电话</h3>
-              <p className="text-muted-foreground">+86 123 4567 8910</p>
+              <p className="text-muted-foreground">+1 4127190594</p>
             </div>
             <div>
               <h3 className="font-semibold text-lg mb-1">社交媒体</h3>

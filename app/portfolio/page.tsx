@@ -6,7 +6,7 @@ export default function PortfolioPage() {
     <div className="container py-12">
       <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
         <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">作品集</h1>
-        <p className="max-w-[700px] text-muted-foreground">浏览我的创意作品，包括摄影、视频和设计项目</p>
+        <p className="max-w-[700px] text-muted-foreground">浏览我的设计项目</p>
       </div>
 
       <Tabs defaultValue="all" className="w-full">
