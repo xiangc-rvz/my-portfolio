@@ -438,7 +438,7 @@ const fthData = {
         <div className="space-y-6">
           <div className="relative rounded-lg overflow-hidden" style={{ height: "500px" }}>
             <video
-              src="/videos/patient-demo.mov"
+              src="/videos/patient-demo.mp4"
               className="w-full h-full object-contain"
               controls
               autoPlay
