@@ -12,8 +12,6 @@ export default function VideoPlayer({ videoUrl }: { videoUrl: string }) {
   const [progress, setProgress] = useState(0)
   const [duration, setDuration] = useState(0)
   const [currentTime, setCurrentTime] = useState(0)
-  const [isLoading, setIsLoading] = useState(true)
-  const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
     const video = videoRef.current
@@ -21,23 +19,14 @@ export default function VideoPlayer({ videoUrl }: { videoUrl: string }) {
 
     const handleLoadedMetadata = () => {
       setDuration(video.duration)
-      setIsLoading(false)
-    }
-
-    const handleError = () => {
-      console.error("Video failed to load:", videoUrl)
-      setHasError(true)
-      setIsLoading(false)
     }
 
     video.addEventListener("loadedmetadata", handleLoadedMetadata)
-    video.addEventListener("error", handleError)
 
     return () => {
       video.removeEventListener("loadedmetadata", handleLoadedMetadata)
-      video.removeEventListener("error", handleError)
     }
-  }, [videoUrl])
+  }, [])
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -90,27 +79,6 @@ export default function VideoPlayer({ videoUrl }: { videoUrl: string }) {
     }
   }
 
-  if (hasError) {
-    return (
-      <div className="relative rounded-lg overflow-hidden bg-black/10 flex items-center justify-center aspect-video">
-        <div className="text-center p-4">
-          <p className="text-red-500 font-medium mb-2">视频加载失败</p>
-          <p className="text-sm text-muted-foreground">请检查视频URL是否正确，或者视频文件是否可访问</p>
-        </div>
-      </div>
-    )
-  }
-
-  if (isLoading) {
-    return (
-      <div className="relative rounded-lg overflow-hidden bg-black/10 flex items-center justify-center aspect-video">
-        <div className="text-center">
-          <p className="text-muted-foreground">视频加载中...</p>
-        </div>
-      </div>
-    )
-  }
-
   return (
     <div className="relative rounded-lg overflow-hidden bg-black">
       <video
@@ -119,9 +87,8 @@ export default function VideoPlayer({ videoUrl }: { videoUrl: string }) {
         className="w-full aspect-video"
         onTimeUpdate={handleTimeUpdate}
         onEnded={() => setIsPlaying(false)}
+        poster="/images/artiverse.png"
         onClick={togglePlay}
-        controls={false}
-        playsInline
       />
 
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">

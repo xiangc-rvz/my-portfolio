@@ -493,8 +493,7 @@ const kittenFishingData = {
   id: 3,
   title: "Kitten Fishing",
   type: "video",
-  // 使用GitHub Raw Content URL
-  videoUrl: "https://github.com/[用户名]/[仓库名]/raw/main/public/videos/kitten-fishing-intro.mp4",
+  videoUrl: "/videos/kitten-fishing-intro.mp4", // 使用新上传的视频
   thumbnail: "/images/fishing-cat-1.png",
   sections: [
     {
